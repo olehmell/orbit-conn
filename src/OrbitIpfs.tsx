@@ -85,32 +85,29 @@ export function OrbitIpfs() {
       // const peerId = '03c4097f9403cd349a867455fa80272171fbb20a604e8a572aff8d30ac073a0b7b'
 
       // const orbitdbAddress = '/orbitdb/zdpuAm1NMQu9PdB2momKYNJVd5M4uaW66T5zLat57QFzzh2GN/user.posts'
-      // const orbitdbAddress = '/orbitdb/zdpuAp8VSUcBgwBsdpQSksyYUSNzxWqjTNJYjcwUsmW5QJ9BB/user.posts3'
-      // const db = await orbitdb.open(orbitdbAddress, {
-      //   create: true,
-      //   type: 'eventlog',
-      //   replicate: true,
-      //   sync: true,
-      //   // overwrite (boolean): Overwrite an existing database (Default: false)
-      //   // replicate (boolean): Replicate the database with peers, requires IPFS PubSub. (Default: true)
-      // })
+      const orbitdbAddress = "/orbitdb/zdpuAymLjtDCCpWFVesevFos7fxuM3zFFZZScFrQhufLbPjvb/user.posts5"
+      const db = await orbitdb.open(orbitdbAddress, {
+        // create: true,
+        type: 'eventlog',
+        replicate: true,
+      })
 
       const id2 = '020a7d38d293dcac543896c8e7a00a3060524d38c28ede9bfd54b183a0961bdbaa'
       // const pubKey2 = '04017de8cf04aa7c09b8c9b52ba546105a8d3a1c40d6a4e76ca42832e03b4339fe9b279ac39c699a069e8b749a620693fcf1164660831a40eb5346787e61bdf6a6'
       // await db.access.grant('write', id2)
 
       // Doesn't work
-      const db = await orbitdb.create('user.posts4', 'eventlog', {
-        accessController: {
-          write: [
-            '*'
-            // Give access to ourselves
-            // orbitdb.identity.id,
-            // // Give access to the second peer
-            // id2
-          ]
-        },
-      })
+      // const db = await orbitdb.create('user.posts5', 'eventlog', {
+      //   accessController: {
+      //     write: [
+      //       '*'
+      //       // Give access to ourselves
+      //       // orbitdb.identity.id,
+      //       // // Give access to the second peer
+      //       // id2
+      //     ]
+      //   },
+      // })
 
       await db.load()
       // database is now ready to be queried
