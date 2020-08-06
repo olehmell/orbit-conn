@@ -31,7 +31,7 @@ function App() {
     };
 
     openOrbit().catch((err) => console.error(err));
-  }, [false]);
+  }, []);
 
   return (
     <div className="App">
